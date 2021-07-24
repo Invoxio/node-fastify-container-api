@@ -1,0 +1,37 @@
+{
+  "name": "fastify-container-api-framework",
+  "version": "0.0.1",
+  "description": "Node based fastify framework for API development in a container",
+  "main": "index.js",
+  "scripts": {
+    "start-dev": "./node_modules/nodemon/bin/nodemon.js ./index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Invoxio/node-fastify-container-api-framework.git"
+  },
+  "keywords": [
+    "node",
+    "fastify",
+    "container",
+    "api",
+    "vscode"
+  ],
+  "author": "Timothy Meade <tim@invoxio.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Invoxio/node-fastify-container-api-framework/issues"
+  },
+  "homepage": "https://github.com/Invoxio/node-fastify-container-api-framework#readme",
+  "dependencies": {
+    "@hapi/boom": "^9.1.3",
+    "fastify": "^3.19.2",
+    "prettier": "^2.3.2",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  },
+  "type": "module"
+}
