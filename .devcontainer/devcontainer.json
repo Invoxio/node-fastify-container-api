@@ -5,7 +5,7 @@
   "context": "..",
 
   // Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
-  "dockerFile": "../Dockerfile",
+  "dockerFile": "./Dockerfile",
 
   // Set *default* container specific settings.json values on container create.
   "settings": {
@@ -18,7 +18,8 @@
 	"esbenp.prettier-vscode",
 	"wesbos.theme-cobalt2",
 	"dbaeumer.vscode-eslint",
-	"rvest.vs-code-prettier-eslint"
+	"rvest.vs-code-prettier-eslint",
+	"shd101wyy.markdown-preview-enhanced"
 ],
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.

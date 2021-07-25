@@ -1,7 +1,7 @@
 <div style="padding-bottom: 20px">
 <div>
 	<img src="./logo.gif"  style="float: left; margin-right: 10px; padding-top: 5px;" width="30px">
-	<h1>Invoxio Node Fastify Api Framework</h1>
+	<h1>Fastify API in a remote container</h1>
 </div>
 <div style='padding-top:10px;'>
 <!-- [![npm version](https://img.shields.io/npm/v/@stripe/stripe-react-native.svg?style=flat-square)](https://www.npmjs.com/package/@stripe/stripe-react-native) -->
@@ -16,9 +16,19 @@ The goal was to have a simple base framework for developing multiple node api ap
 
 - Node code
 - Fastify base
-- Container development in VSCode
+- VSCode remote container development
 
-## Examples
+## VSCode
+
+In remote container development, the vscode enviroment is also contained in the setup of the container. Including any extensions.
+
+Installed extensions:
+
+- Prettier: esbenp.prettier-vscode
+- CobaltBlue Theme: wesbos.theme-cobalt2
+- Eslint: dbaeumer.vscode-eslint
+- Prettier Eslint: rvest.vs-code-prettier-eslint
+- Markdown Preview Enhancer: shd101wyy.markdown-preview-enhanced
 
 ## Contributing
 
