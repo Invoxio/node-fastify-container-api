@@ -1,6 +1,6 @@
-import { v4 as uuidv4 } from 'uuid';
+const { v4: uuidv4 } = require('uuid');
 // import items from '../items.js';
-import mockdata from '../mockdata.js';
+const mockdata = require('../mockdata.js');
 
 const getUsers = (req, reply) => {
   reply.send(mockdata);
@@ -44,4 +44,4 @@ const updateUser = (req, reply) => {
   reply.send(item);
 };
 
-export { getUsers, getUser, addUser, deleteUser, updateUser };
+module.exports = { getUsers, getUser, addUser, deleteUser, updateUser };

@@ -1,25 +1,27 @@
-"use strict"
+'use strict';
 
-module.exports = function (fastify, opts, next) {
+function healthRoutes(fastify, options, done) {
   fastify.route({
-    method: "GET",
+    method: 'GET',
     schema: {
-      tags: ["Healthcheck"],
-      description: "Healthcheck endpoint to verify health",
+      tags: ['Healthcheck'],
+      description: 'Healthcheck endpoint to verify health',
       response: {
         200: {
-          type: "object",
+          type: 'object',
           properties: {
-            status: {type: "string"},
-            timestamp: {type: "string", format: "date-time"},
+            status: { type: 'string' },
+            timestamp: { type: 'string', format: 'date-time' },
           },
         },
       },
     },
-    url: "/health",
+    url: '/health',
     handler: async (req, reply) => {
-      return {status: "ok", timestamp: new Date().toISOString()}
+      return { status: 'ok', timestamp: new Date().toISOString() };
     },
-  })
-  next()
+  });
+  done();
 }
+
+module.exports = healthRoutes;

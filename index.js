@@ -1,10 +1,13 @@
-import fastify from 'fastify';
-import itemRoutes from './routes/users.js';
+const fastify = require('fastify');
+
+const healthRoutes = require('./routes/health.js');
+const itemRoutes = require('./routes/users.js');
 
 const server = fastify({
   logger: true,
 });
 
+server.register(healthRoutes);
 server.register(itemRoutes);
 
 // Declare a route

@@ -1,10 +1,10 @@
-import {
+customElements = {
   getUsers,
   getUser,
   addUser,
   deleteUser,
   updateUser,
-} from '../controllers/users.js';
+} = require('../controllers/users.js');
 
 // Item schema
 const User = {
@@ -85,7 +85,7 @@ const updateUserOpts = {
   handler: updateUser,
 };
 
-const userRoutes = (fastify, options, done) => {
+function userRoutes(fastify, options, done) {
   // Get all items
   fastify.get('/users', getUsersOpts);
 
@@ -102,6 +102,6 @@ const userRoutes = (fastify, options, done) => {
   fastify.put('/users/:id', updateUserOpts);
 
   done();
-};
+}
 
-export default userRoutes;
+module.exports = userRoutes;

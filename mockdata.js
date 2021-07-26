@@ -1,4 +1,4 @@
-const mockdata = [
+let mockdata = [
   {
     id: 1,
     first_name: 'Tony',
@@ -8001,4 +8001,4 @@ const mockdata = [
   },
 ];
 
-export default mockdata;
+module.exports = mockdata;
