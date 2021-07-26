@@ -1,11 +1,13 @@
 'use strict';
 
-function healthRoutes(fastify, options, done) {
+module.exports = function (fastify, opts, next) {
   fastify.route({
     method: 'GET',
+    url: '/health',
     schema: {
       tags: ['Healthcheck'],
-      description: 'Healthcheck endpoint to verify health',
+      description:
+        'Healthcheck endpoint to determine if service is up and running',
       response: {
         200: {
           type: 'object',
@@ -16,12 +18,18 @@ function healthRoutes(fastify, options, done) {
         },
       },
     },
-    url: '/health',
-    handler: async (req, reply) => {
+    handler: async (request, reply) => {
       return { status: 'ok', timestamp: new Date().toISOString() };
     },
   });
-  done();
-}
 
-module.exports = healthRoutes;
+  next();
+};
+
+// If you prefer async/await, use the following
+//
+// module.exports = async function (fastify, opts) {
+//   fastify.get('/', async function (request, reply) {
+//     return { root: true }
+//   })
+// }
