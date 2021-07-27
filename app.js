@@ -6,7 +6,7 @@ const AutoLoad = require('fastify-autoload');
 const appEnv = require('./config');
 module.exports = async function (fastify, opts) {
   // Place here your custom code!
-
+  appEnv();
   // Do not touch the following lines
 
   // This loads all plugins defined in plugins

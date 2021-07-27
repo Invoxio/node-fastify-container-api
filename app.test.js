@@ -2,6 +2,7 @@ const AppEnv = require('./appEnv');
 const appEnv = require('./config');
 
 describe('AppEnv tests', () => {
+  process.env.NODE_ENV = 'development';
   const createAppEnv = (env) => new AppEnv(env);
 
   it('should throw for empty env', () => {
@@ -39,10 +40,10 @@ describe('Env config tests', () => {
   // });
 
   it('should be development', () => {
-    expect(appEnv.isDevelopment).toBe(true);
+    expect(appEnv().isDevelopment).toBe(true);
   });
 
   it('should be development', () => {
-    expect(!appEnv.isDevelopment).toBe(false);
+    expect(!appEnv().isDevelopment).toBe(false);
   });
 });
