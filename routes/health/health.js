@@ -3,7 +3,7 @@
 module.exports = function (fastify, opts, next) {
   fastify.route({
     method: 'GET',
-    url: '/health',
+    url: '/',
     schema: {
       tags: ['Healthcheck'],
       description:

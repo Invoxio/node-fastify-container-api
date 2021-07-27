@@ -4,7 +4,7 @@ const deleteUserWorker = (req, reply) => {
   const { id } = req.params;
 
   const newData = mockdata.filter((user) => user.id !== parseInt(id));
-  reply.send({ message: `User ${id} has been removed` });
+  reply.send({ status: 'ok', message: `User ${id} has been removed` });
 };
 
 // Options for get all items
@@ -14,6 +14,7 @@ const deleteUser = {
       200: {
         type: 'object',
         properties: {
+          status: { type: 'string' },
           message: { type: 'string' },
         },
       },

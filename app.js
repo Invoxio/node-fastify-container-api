@@ -3,12 +3,10 @@
 const path = require('path');
 const AutoLoad = require('fastify-autoload');
 
-/**
- *
- * @param {import('fastify').FastifyInstance} fastify
- */
+const appEnv = require('./config');
 module.exports = async function (fastify, opts) {
   // Place here your custom code!
+
   // Do not touch the following lines
 
   // This loads all plugins defined in plugins
@@ -19,14 +17,15 @@ module.exports = async function (fastify, opts) {
     options: Object.assign({}, opts),
   });
 
-  // This loads all plugins defined in services
+  // This loads all plugins defined in routes folders
   // define your routes in one of these
   await fastify.register(AutoLoad, {
     dir: path.join(__dirname, 'routes'),
+    ignorePattern: /.*(test|spec).js/,
     options: Object.assign({ prefix: '/' }, opts),
   });
 
-  if (process.env.NODE_ENV === 'development') {
+  if (appEnv.isDevelopment) {
     fastify.log.info(fastify.printRoutes());
   }
 };
